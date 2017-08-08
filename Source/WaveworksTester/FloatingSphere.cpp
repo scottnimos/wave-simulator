@@ -39,7 +39,7 @@ void UFloatingSphere::TickComponent( float DeltaTime, ELevelTick TickType, FActo
 	
 	WaveWorksComponent->SampleDisplacements(samplePoints, WaveWorksRecieveDisplacementDelegate);
 	GLog->Log("Testing");
-	/*//FIX THIS - it probably doesnt work - like all of it*/
+	/*//FIX THIS - it probably doesnt work - like all of it
 	UStaticMeshComponent* sm = Cast<UStaticMeshComponent>(GetOwner());
 	if (!sm)
 	{
@@ -48,13 +48,13 @@ void UFloatingSphere::TickComponent( float DeltaTime, ELevelTick TickType, FActo
 	}
 	FVector forceToAdd = CalculateForceToAdd(); //add declaration
 	sm->AddForce(forceToAdd * sm->GetMass()); //we will want to change how we get the mass since we want the mass of the boat not the sphere
+	*/
 	
-	/*
 	FVector newActorPosition;
 	newActorPosition.X = WaveWorksOutDisplacement.X * 100.0f + InitialPosition.X;
 	newActorPosition.Y = WaveWorksOutDisplacement.Y * 100.0f + InitialPosition.Y;
 	newActorPosition.Z = WaveWorksOutDisplacement.Z * 100.0f + WaveWorksComponent->SeaLevel;
-	GetOwner()->SetActorLocation(newActorPosition);*/
+	GetOwner()->SetActorLocation(newActorPosition);
 
 }
 
