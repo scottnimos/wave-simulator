@@ -8,10 +8,10 @@ __Are you too lazy?__
 [YES MAKE MY LIFE EASIER  :metal:](https://wiki.unrealengine.com/Git_source_control_(Tutorial))
 
 __:octocat: How to contribute (Assuming you have cloned the project)__
-*git pull
-*git add --all
-*git commit -am "WHOOP :+1:"
-*git push origin master
+* git pull
+* git add --all
+* git commit -am "WHOOP :+1:"
+* git push origin master
 
 
-##See Scott to set up private and public key for proper github access to push code
+## See Scott to set up private and public key for proper github access to push code
