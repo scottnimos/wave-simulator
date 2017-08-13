@@ -1,4 +1,7 @@
 # Pivot Maritime Wave Simulation
+### Project Requirements
+* Visual Studio 2017
+* [UE4 with WaveWorks](https://github.com/NvPhysX/UnrealEngine/tree/WaveWorks-4.16)
 
 __Are you too lazy?__
 > Oh yes I definetely rather press the souce control button
