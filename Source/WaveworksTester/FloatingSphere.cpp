@@ -38,24 +38,33 @@ void UFloatingSphere::TickComponent( float DeltaTime, ELevelTick TickType, FActo
 	samplePoints.Add(samplePos);
 	
 	WaveWorksComponent->SampleDisplacements(samplePoints, WaveWorksRecieveDisplacementDelegate);
-	GLog->Log("Testing");
-	/*//FIX THIS - it probably doesnt work - like all of it
-	UStaticMeshComponent* sm = Cast<UStaticMeshComponent>(GetOwner());
-	if (!sm)
+	
+	// Get All static Mesh Components - here ive made a for loop to grab all of them for multiple test points in the future
+	//UStaticMeshComponent* sm = 0;//have to set to 0 (Ue4 or c++ crap) same as null
+	TArray<UStaticMeshComponent*> components;
+	GetOwner()->GetComponents<UStaticMeshComponent>(components);//pointers are confusing
+	UStaticMeshComponent* staticMesh = components[0];
+	/*for (int32 i = 0; i<components.Num(); i++) //Count is zero
+	{
+		staticMesh = Components[i];
+	}*/
+
+	if (!staticMesh)
 	{
 		GLog->Log("Root component is not a static mesh");
 		return;
 	}
-	FVector forceToAdd = CalculateForceToAdd(); //add declaration
-	sm->AddForce(forceToAdd * sm->GetMass()); //we will want to change how we get the mass since we want the mass of the boat not the sphere
-	*/
-	
+
+	staticMesh->AddForce(this->CalculateForceToAdd() * staticMesh->GetMass()); //we will want the mass to the boat, not the sphere in future
+
+	/*
+	//Set the Actor Position to specific point on the wave
 	FVector newActorPosition;
 	newActorPosition.X = WaveWorksOutDisplacement.X * 100.0f + InitialPosition.X;
 	newActorPosition.Y = WaveWorksOutDisplacement.Y * 100.0f + InitialPosition.Y;
 	newActorPosition.Z = WaveWorksOutDisplacement.Z * 100.0f + WaveWorksComponent->SeaLevel;
 	GetOwner()->SetActorLocation(newActorPosition);
-
+	*/
 }
 
 void UFloatingSphere::OnRecievedWaveWorksDisplacement(TArray<FVector4> OutDisplacements)
@@ -68,5 +77,5 @@ void UFloatingSphere::OnRecievedWaveWorksDisplacement(TArray<FVector4> OutDispla
 
 FVector UFloatingSphere::CalculateForceToAdd()
 {
-	return FVector(100.0f,0,100.0f);
+	return FVector(0, 0, 1000);
 }
