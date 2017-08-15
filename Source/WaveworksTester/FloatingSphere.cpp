@@ -46,7 +46,7 @@ void UFloatingSphere::TickComponent( float DeltaTime, ELevelTick TickType, FActo
 	UStaticMeshComponent* staticMesh = components[0];
 	/*for (int32 i = 0; i<components.Num(); i++) //Count is zero
 	{
-		staticMesh = Components[i];
+		staticMesh = components[i];
 	}*/
 
 	if (!staticMesh)
