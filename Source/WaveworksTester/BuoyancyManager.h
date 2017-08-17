@@ -24,6 +24,7 @@ public:
 	void OnRecievedWaveWorksDisplacement(TArray<FVector4> OutDisplacements);
 
 	FVector CalculateForceToAdd();
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = WaveWorks)
 		AActor* WaveWorksActor;
