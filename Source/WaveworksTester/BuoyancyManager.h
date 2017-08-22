@@ -6,6 +6,30 @@
 #include "BuoyancyManager.generated.h"
 
 
+class UBuoyancyManager;
+
+USTRUCT(BlueprintType)
+struct FWavePointData
+{
+	GENERATED_BODY()
+		UPROPERTY()
+		bool bIsUnder;
+	UPROPERTY()
+		float Amount;
+	UPROPERTY()
+		float Delta;
+	UPROPERTY()
+		FVector WaveIntersectPoint;
+	UPROPERTY()
+		float WaveHeight;
+	//Constructor
+	FWavePointData()
+	{
+		bIsUnder = false;
+	}
+};
+
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class WAVEWORKSTESTER_API UBuoyancyManager : public UActorComponent
 {
@@ -23,14 +47,28 @@ public:
 
 	void OnRecievedWaveWorksDisplacement(TArray<FVector4> OutDisplacements);
 
-	FVector CalculateForceToAdd();
+private:
+	void CalculateForceToAdd();
+	FWavePointData ProcessWaveHeightAtPoint(FVector pointLocation, const FTransform& actorTransform);
+
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = WaveWorks)
 		AActor* WaveWorksActor;
+	UPROPERTY(Category = "WaveWorks", EditAnywhere, BlueprintReadWrite)
+		TArray<FVector> WaterTestPoints;
+	UPROPERTY(Category = "WaveWorks", EditAnywhere, BlueprintReadWrite)
+		float PointThickness;
+	UPROPERTY(Category = "WaveWorks", EditAnywhere, BlueprintReadWrite)
+		float DisplacementRatio;
+	UPROPERTY(Category = "WaveWorks", EditAnywhere, BlueprintReadWrite)
+		float MassMultiplier;
+	UPROPERTY(Category = "Debug", EditAnywhere, BlueprintReadWrite)
+		bool bDrawDebugSpheres;
 private:
 	class UWaveWorksComponent* WaveWorksComponent;
 	FVector4 WaveWorksOutDisplacement;
 	FVector InitialPosition;
+	UStaticMeshComponent* staticMesh;
 	FVectorArrayDelegate WaveWorksRecieveDisplacementDelegate;
 };
