@@ -84,7 +84,7 @@ void UBuoyancyManager::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	//make sure gravity is on
 	if (!staticMesh->IsGravityEnabled())
 	{
-		staticMesh->SetEnableGravity(true);
+		//staticMesh->SetEnableGravity(true);
 	}													
 }
 
