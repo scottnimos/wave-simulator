@@ -4,14 +4,14 @@
 * [UE4 with WaveWorks](https://github.com/NvPhysX/UnrealEngine/tree/WaveWorks-4.16)
 
 
-##Installation Guide
+## Installation Guide
 There are 2 parts required to be able to run and edit this WaveWorks Project:
 
-###Part 1: Setting up the Unreal Engine 4 with WaveWorks.
+### Part 1: Setting up the Unreal Engine 4 with WaveWorks.
 
-###Part 2: Accessing and cloning the repository of this project.
+### Part 2: Accessing and cloning the repository of this project.
  
-###Part 1:
+### Part 1:
 Waveworks Installation and setup with Unreal Engine 4:
 Step By Step Installation of Waveworks
  
@@ -43,7 +43,7 @@ Open the UE4.sln file in Visual Studio
 Step 8:
 Press F5 in Visual Studio to run in debug mode, then build the files that are needed.
  
-###Part 2:
+### Part 2:
 
 Accessing and cloning the repository of this project.
  
