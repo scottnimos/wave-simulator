@@ -1,4 +1,6 @@
 # Pivot Maritime Wave Simulation
+For more detail for instalation or documentaion refer to confluence
+
 ### Project Requirements
 * Visual Studio 2017
 * [UE4 with WaveWorks](https://github.com/NvPhysX/UnrealEngine/tree/WaveWorks-4.16)
