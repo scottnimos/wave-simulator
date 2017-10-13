@@ -1,4 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/* This file is an Actor Component which is added on to a actor (static mesh)
+with he intent to interact and float on a waveworks water surface
+it exposes an api to ue4 to add test points and change the amount of buoyancy force
+Also playing with linear and angular dampening has some interesting effects to make it realistic.
+
+Author: Scott Nimos, Nathan Mangan
+*/
 
 #include "WaveworksTester.h"
 #include "BuoyancyManager.h"

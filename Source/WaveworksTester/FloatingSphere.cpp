@@ -1,4 +1,7 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/* This file is an Actor Component which is added on to a actor (static mesh)
+This file set the actor postion to a specific point on the wave
+Author: Scott Nimos, Nathan Mangan
+*/
 
 #include "WaveworksTester.h"
 #include "FloatingSphere.h"
