@@ -50,6 +50,7 @@ public:
 private:
 	void CalculateForceToAdd();
 	FWavePointData ProcessWaveHeightAtPoint(FVector pointLocation, const FTransform& actorTransform);
+	//FWavePointData ProcessWaveHeightAtPoint(FVector pointLocation, const FTransform& actorTransform, int32 num);
 
 
 public:
@@ -65,8 +66,11 @@ public:
 		float MassMultiplier;
 	UPROPERTY(Category = "Debug", EditAnywhere, BlueprintReadWrite)
 		bool bDrawDebugSpheres;
+	UPROPERTY(Category = "Time Scale", EditAnywhere, BlueprintReadWrite)
+		float timescale;
 private:
 	class UWaveWorksComponent* WaveWorksComponent;
+	//TArray<FVector4> WaveWorksOutDisplacements;
 	FVector4 WaveWorksOutDisplacement;
 	FVector InitialPosition;
 	UStaticMeshComponent* staticMesh;
